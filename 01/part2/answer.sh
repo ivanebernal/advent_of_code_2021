@@ -1,1 +1,0 @@
-kotlinc -script window_depth_increases.kts -- -i ../input.txt
