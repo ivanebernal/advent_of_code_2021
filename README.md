@@ -1,4 +1,4 @@
-# advent_of_code_2021
+# Advent of Code 2021
 A repo with my answers to all Advent of Code 2021 problems. 
 
 https://adventofcode.com/
