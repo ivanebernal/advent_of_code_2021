@@ -23,8 +23,8 @@ fun getLargestBasin(row: Int, col: Int): Int {
     visitedMap[row][col] = true
     val adjacents = listOf(Pair(row - 1, col), Pair(row + 1, col), Pair(row, col - 1), Pair(row, col + 1))
     var result = 1
-    adjacents.forEach { adjacent ->
-        result += getLargestBasin(adjacent.first, adjacent.second)
+    adjacents.forEach { (r, c) ->
+        result += getLargestBasin(r, c)
     }
     return result
 }
