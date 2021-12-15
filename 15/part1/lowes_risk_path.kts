@@ -14,10 +14,10 @@ File(input).forEachLine { line ->
 }
 
 val prevMap = mutableMapOf<Vertex, Vertex>()
+val distanceMap = mutableMapOf<Vertex, Int>()
 
 fun dijkstra() {
     val source = Pair(0, 0)
-    val distanceMap = mutableMapOf<Vertex, Int>()
     distanceMap[source] = 0
     val nodeQueue = PriorityQueue<Vertex>({ a, b -> (distanceMap[a] ?: Int.MAX_VALUE) - (distanceMap[b] ?: Int.MAX_VALUE) })
     nodeQueue.add(source)
@@ -49,13 +49,7 @@ fun getNeighbors(row: Int, col: Int): List<Vertex> {
 
 dijkstra()
 
-var current = Pair(cave.size - 1, cave[0].size - 1)
-var result = 0
-
-while(current != Pair(0,0)) {
-    result += cave[current.first][current.second]
-    current = prevMap[current]!!
-}
+var exit = Pair(cave.size - 1, cave[0].size - 1)
 
 // Starting position risk is not counted
-println("Lowes risk level $result")
+println("Lowes risk level ${distanceMap[exit]!!}")
