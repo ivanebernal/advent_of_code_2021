@@ -1,6 +1,5 @@
 import java.io.File
 import java.lang.IllegalArgumentException
-import java.util.ArrayDeque
 
 val input = if(args.contains("-i")) args[1 + args.indexOf("-i")] else throw IllegalArgumentException("Specifile a file with -i")
 
